@@ -34,7 +34,14 @@ DRAGONALGAS['Rentabilidad']=DRAGONALGAS['R/P']/DRAGONALGASMEDIAN
 ABREVADEROS['Rentabilidad']=ABREVADEROS['R/P']/ABREVADEROSMEDIAN
 FULMINADORAS['Rentabilidad']=FULMINADORAS['R/P']/FULMINADORASMEDIAN
 
+ACARICIADORAS=ACARICIADORAS.sort_values(by='Rentabilidad', ascending=False)
+APORREADORAS=APORREADORAS.sort_values(by='Rentabilidad', ascending=False)
+DRAGONALGAS=DRAGONALGAS.sort_values(by='Rentabilidad', ascending=False)
+ABREVADEROS=ABREVADEROS.sort_values(by='Rentabilidad', ascending=False)
+FULMINADORAS=FULMINADORAS.sort_values(by='Rentabilidad', ascending=False)
+
 TODOS=pd.concat([ACARICIADORAS,APORREADORAS,DRAGONALGAS,ABREVADEROS,FULMINADORAS], ignore_index=True)
+TODOS=TODOS.sort_values(by='Rentabilidad', ascending=False)
 
 
 if OPCIONES == 'Todos':
