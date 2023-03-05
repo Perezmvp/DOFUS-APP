@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+
 st.title('Rentabilidad de objetos de cria')
 
 st.subheader('DATOS')
@@ -20,7 +21,7 @@ DATA2MEDIAN=DATA2RP.median()
 st.write(DATA)
 st.subheader('Abrevaderos')
 st.write(DATA1)
-st.subheader('Aporreadoras')
+st.subheader('Aporreadoras :slightly_smiling_face:')
 st.write(DATA2)
 #st.write(DATA1MEDIAN)
 #st.write(DATA2MEDIAN)
