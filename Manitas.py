@@ -8,6 +8,7 @@ OPCIONES=st.radio('Filtrar por:',NOMBRE_OPCIONES)
 
 DATAINDEX=pd.read_csv('DATA.csv', sep=';')
 DATA=DATAINDEX.style.hide(axis="index")
+st.write(DATA)
 DATA['Rendimiento']=DATA['Eficacia']*DATA['Usos']
 DATA['R/P']=DATA['Rendimiento']/DATA['Precio']
 
@@ -37,7 +38,7 @@ FULMINADORAS['Rentabilidad']=FULMINADORAS['R/P']/FULMINADORASMEDIAN
 
 TODOS=pd.concat([ACARICIADORAS,APORREADORAS,DRAGONALGAS,ABREVADEROS,FULMINADORAS], ignore_index=True)
 
-st.write(DATA)
+
 if OPCIONES == 'Todos':
     st.subheader('TODOS :earth_americas:')
     st.write(TODOS)
