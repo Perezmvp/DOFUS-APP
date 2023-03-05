@@ -46,22 +46,22 @@ TODOS=TODOS.sort_values(by='Rentabilidad', ascending=False)
 
 if OPCIONES == 'Todos':
     st.subheader('TODOS :earth_americas:')
-    st.write(TODOS)
+    st.write(TODOS.reset_index(drop=True))
 if OPCIONES == 'Acariciadoras':
     st.subheader('ACARICIADORAS :smile:')
-    st.write(ACARICIADORAS.reset_index())
+    st.write(ACARICIADORAS.reset_index(drop=True))
 if OPCIONES == 'Aporreadoras':
     st.subheader('APORREDORAS :rage:')
-    st.write(APORREADORAS.reset_index())
+    st.write(APORREADORAS.reset_index(drop=True))
 if OPCIONES == 'Dragonalgas':
     st.subheader('DRAGONALGAS :peach:')
-    st.write(DRAGONALGAS.reset_index())
+    st.write(DRAGONALGAS.reset_index(drop=True))
 if OPCIONES == 'Abrevaderos':
     st.subheader('ABREVADEROS :droplet:')
-    st.write(ABREVADEROS.reset_index())
+    st.write(ABREVADEROS.reset_index(drop=True))
 if OPCIONES == 'Fulminadoras':
     st.subheader('FULMINADORAS :zap:')
-    st.write(FULMINADORAS.reset_index())
+    st.write(FULMINADORAS.reset_index(drop=True))
 
 #st.subheader('Abrevaderos')
 #st.write(ABREVADEROS)
