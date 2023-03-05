@@ -3,7 +3,7 @@ import pandas as pd
 
 
 st.title('Rentabilidad de objetos de cria')
-NOMBRE_OPCIONES=['Acariciadoras','Aporreadoras','Dragonalgas','Abrevaderos','Fulminadoras']
+NOMBRE_OPCIONES=['Todos','Acariciadoras','Aporreadoras','Dragonalgas','Abrevaderos','Fulminadoras']
 OPCIONES=st.radio('Filtrar por:',NOMBRE_OPCIONES)
 
 st.subheader('DATOS')
