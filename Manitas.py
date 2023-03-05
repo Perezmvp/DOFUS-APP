@@ -11,7 +11,7 @@ DATA=pd.read_csv('DATA.csv', sep=';')
 DATA['Rendimiento']=DATA['Eficacia']*DATA['Usos']
 DATA['R/P']=DATA['Rendimiento']/DATA['Precio']
 
-ACARICIADORAS=DATA.query("Item=='Acariciadora'")
+ACARICIADORAS=DATA.query("Item=='Acariciador'")
 APORREADORAS=DATA.query("Item=='Aporreadora'")
 DRAGONALGAS=DATA.query("Item=='Dragonalgas'")
 ABREVADEROS=DATA.query("Item=='Abrevadero'")
@@ -35,7 +35,6 @@ DRAGONALGAS['Rentabilidad']=DRAGONALGAS['R/P']/DRAGONALGASMEDIAN
 ABREVADEROS['Rentabilidad']=ABREVADEROS['R/P']/ABREVADEROSMEDIAN
 FULMINADORAS['Rentabilidad']=FULMINADORAS['R/P']/FULMINADORASMEDIAN
 
-st.write(DATA)
 if OPCIONES == 'Acariciadoras':
     st.write(ACARICIADORAS)
 if OPCIONES == 'Aporreadoras':
