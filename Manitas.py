@@ -7,7 +7,6 @@ NOMBRE_OPCIONES=['Todos','Acariciadoras','Aporreadoras','Dragonalgas','Abrevader
 OPCIONES=st.radio('Filtrar por:',NOMBRE_OPCIONES)
 
 DATA=pd.read_csv('DATA.csv', sep=';')
-st.write(DATA)
 DATA['Rendimiento']=DATA['Eficacia']*DATA['Usos']
 DATA['R/P']=DATA['Rendimiento']/DATA['Precio']
 
@@ -40,22 +39,22 @@ TODOS=pd.concat([ACARICIADORAS,APORREADORAS,DRAGONALGAS,ABREVADEROS,FULMINADORAS
 
 if OPCIONES == 'Todos':
     st.subheader('TODOS :earth_americas:')
-    st.write(TODOS)
+    st.write(TODOS.set_index())
 if OPCIONES == 'Acariciadoras':
     st.subheader('ACARICIADORAS :smile:')
-    st.write(ACARICIADORAS)
+    st.write(ACARICIADORAS.reset_index())
 if OPCIONES == 'Aporreadoras':
     st.subheader('APORREDORAS :rage:')
-    st.write(APORREADORAS)
+    st.write(APORREADORAS.reset_index())
 if OPCIONES == 'Dragonalgas':
     st.subheader('DRAGONALGAS :peach:')
-    st.write(DRAGONALGAS)
+    st.write(DRAGONALGAS.reset_index())
 if OPCIONES == 'Abrevaderos':
     st.subheader('ABREVADEROS :droplet:')
-    st.write(ABREVADEROS)
+    st.write(ABREVADEROS.reset_index())
 if OPCIONES == 'Fulminadoras':
     st.subheader('FULMINADORAS :zap:')
-    st.write(FULMINADORAS)
+    st.write(FULMINADORAS.reset_index())
 
 #st.subheader('Abrevaderos')
 #st.write(ABREVADEROS)
