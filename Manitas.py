@@ -69,7 +69,17 @@ if OPCIONES == 'Fulminadoras':
     st.subheader('FULMINADORAS :zap:')
     st.write(FULMINADORAS.reset_index(drop=True))
 
-st.write(edited_df = st.experimental_data_editor(TODOS, num_rows="dynamic"))
+add_selectbox = st.sidebar.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone")
+)
+
+# Using "with" notation
+with st.sidebar:
+    add_radio = st.radio(
+        "Choose a shipping method",
+        ("Standard (5-15 days)", "Express (2-5 days)")
+    )
 
 #st.subheader('Abrevaderos')
 #st.write(ABREVADEROS)
