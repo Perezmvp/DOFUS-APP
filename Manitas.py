@@ -34,6 +34,12 @@ DRAGONALGAS['Rentabilidad']=DRAGONALGAS['R/P']/DRAGONALGASMEDIAN
 ABREVADEROS['Rentabilidad']=ABREVADEROS['R/P']/ABREVADEROSMEDIAN
 FULMINADORAS['Rentabilidad']=FULMINADORAS['R/P']/FULMINADORASMEDIAN
 
+ACARICIADORAS=ACARICIADORAS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
+APORREADORAS=APORREADORAS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
+DRAGONALGAS=DRAGONALGAS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
+ABREVADEROS=ABREVADEROS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
+FULMINADORAS=FULMINADORAS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
+
 ACARICIADORAS=ACARICIADORAS.sort_values(by='Rentabilidad', ascending=False)
 APORREADORAS=APORREADORAS.sort_values(by='Rentabilidad', ascending=False)
 DRAGONALGAS=DRAGONALGAS.sort_values(by='Rentabilidad', ascending=False)
