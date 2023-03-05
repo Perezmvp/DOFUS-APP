@@ -46,7 +46,7 @@ TODOS=TODOS.sort_values(by='Rentabilidad', ascending=False)
 
 if OPCIONES == 'Todos':
     st.subheader('TODOS :earth_americas:')
-    st.write(TODOS.reset_index(inplace=True))
+    st.write(TODOS)
 if OPCIONES == 'Acariciadoras':
     st.subheader('ACARICIADORAS :smile:')
     st.write(ACARICIADORAS.reset_index())
