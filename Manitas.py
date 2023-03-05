@@ -6,7 +6,7 @@ st.title('Rentabilidad de objetos de cria')
 NOMBRE_OPCIONES=['Todos','Acariciadoras','Aporreadoras','Dragonalgas','Abrevaderos','Fulminadoras']
 OPCIONES=st.radio('Filtrar por:',NOMBRE_OPCIONES)
 
-DATA=pd.read_csv('DATA.csv', sep=';')
+DATA=pd.read_csv('DATA.csv', index_col=False, sep=';')
 DATA['Rendimiento']=DATA['Eficacia']*DATA['Usos']
 DATA['R/P']=DATA['Rendimiento']/DATA['Precio']
 
@@ -38,22 +38,22 @@ TODOS=pd.concat([ACARICIADORAS,APORREADORAS,DRAGONALGAS,ABREVADEROS,FULMINADORAS
 
 if OPCIONES == 'Todos':
     st.subheader('TODOS :earth_americas:')
-    st.write(TODOS.reset_index(drop=True))
+    st.write(TODOS)
 if OPCIONES == 'Acariciadoras':
     st.subheader('ACARICIADORAS :smile:')
-    st.write(ACARICIADORAS.reset_index(drop=True))
+    st.write(ACARICIADORAS)
 if OPCIONES == 'Aporreadoras':
     st.subheader('APORREDORAS :rage:')
-    st.write(APORREADORAS.reset_index(drop=True))
+    st.write(APORREADORAS)
 if OPCIONES == 'Dragonalgas':
     st.subheader('DRAGONALGAS :peach:')
-    st.write(DRAGONALGAS.reset_index(drop=True))
+    st.write(DRAGONALGAS)
 if OPCIONES == 'Abrevaderos':
     st.subheader('ABREVADEROS :droplet:')
-    st.write(ABREVADEROS.reset_index(drop=True))
+    st.write(ABREVADEROS)
 if OPCIONES == 'Fulminadoras':
     st.subheader('FULMINADORAS :zap:')
-    st.write(FULMINADORAS.reset_index(drop=True))
+    st.write(FULMINADORAS)
 
 #st.subheader('Abrevaderos')
 #st.write(ABREVADEROS)
