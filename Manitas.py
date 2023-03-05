@@ -3,25 +3,53 @@ import pandas as pd
 
 
 st.title('Rentabilidad de objetos de cria')
+NOMBRE_OPCIONES=['Acariciadoras','Aporreadoras','Dragonalgas','Abrevaderos','Fulminadoras']
+OPCIONES=st.radio('Filtrar por:',opciones)
 
 st.subheader('DATOS')
 DATA=pd.read_csv('DATA.csv', sep=';')
 DATA['Rendimiento']=DATA['Eficacia']*DATA['Usos']
 DATA['R/P']=DATA['Rendimiento']/DATA['Precio']
 
+ACARICIADORAS=DATA.query("Item=='Acariciadora'")
+APORREADORAS=DATA.query("Item=='Aporreadora'")
+DRAGONALGAS=DATA.query("Item=='Dragonalgas'")
+ABREVADEROS=DATA.query("Item=='Abrevadero'")
+FULMINADORAS=DATA.query("Item=='Fulminadora'")
 
-DATA1=DATA.query("Item=='Abrevadero'")
-DATA1RP=DATA1['R/P']
-DATA2=DATA.query("Item=='Aporreadora'")
-DATA2RP=DATA2['R/P']
-DATA1MEDIAN=DATA1RP.median()
-DATA2MEDIAN=DATA2RP.median()
-#DATA1ORDENADO=DATA1.sort_values(by='Nivel', ascending=False)
+ACARICIADORASRP=ACARICIADORAS['R/P']
+APORREADORASRP=APORREADORAS['R/P']
+DRAGONALGASRP=DRAGONALGAS['R/P']
+ABREVADEROSRP=ABREVADEROS['R/P']
+FULMINADORASRP=FULMINADORAS['R/P']
+
+ACARICIADORASMEDIAN=ACARICIADORASRP.median()
+APORREADORASMEDIAN=APORREADORASRP.median()
+DRAGONALGASMEDIAN=DRAGONALGASRP.median()
+ABREVADEROSMEDIAN=ABREVADEROSRP.median()
+FULMINADORASMEDIAN=FULMINADORASRP.median()
+
+ACARICIADORAS['Rentabilidad']=ACARICIADORAS['R/P']/ACARICIADORASMEDIAN
+APORREADORAS['Rentabilidad']=APORREADORAS['R/P']/APORREADORASMEDIAN
+DRAGONALGAS['Rentabilidad']=DRAGONALGAS['R/P']/DRAGONALGASMEDIAN
+ABREVADEROS['Rentabilidad']=ABREVADEROS['R/P']/ABREVADEROSMEDIAN
+FULMINADORAS['Rentabilidad']=FULMINADORAS['R/P']/FULMINADORASMEDIAN
 
 st.write(DATA)
-st.subheader('Abrevaderos')
-st.write(DATA1)
-st.subheader('Aporreadoras :slightly_smiling_face:')
-st.write(DATA2)
-#st.write(DATA1MEDIAN)
-#st.write(DATA2MEDIAN)
+if OPCIONES == 'Acariciadoras':
+    st.write(ACARICIADORAS)
+if OPCIONES == 'Aporreadoras':
+    st.write(APORREADORAS)
+if OPCIONES == 'Dragonalgas':
+    st.write(DRAGONALGAS)
+if OPCIONES == 'Abrevaderos':
+    st.write(ABREVADEROS)
+if OPCIONES == 'Fulminadoras':
+    st.write(FULMINADORAS)
+
+#st.subheader('Abrevaderos')
+#st.write(ABREVADEROS)
+#st.subheader('Aporreadoras :slightly_smiling_face:')
+#st.write(APORREADORAS)
+#st.write(ABREVADEROSMEDIAN)
+#st.write(APORREADORASMEDIAN)
