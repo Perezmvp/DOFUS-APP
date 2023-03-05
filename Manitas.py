@@ -4,7 +4,7 @@ import pandas as pd
 
 st.title('Rentabilidad de objetos de cria')
 NOMBRE_OPCIONES=['Todos','Acariciadoras','Aporreadoras','Dragonalgas','Abrevaderos','Fulminadoras']
-OPCIONES=st.radio('Filtrar por:',NOMBRE_OPCIONES)
+OPCIONES=st.radio('Filtrar por:',NOMBRE_OPCIONES,horizontal=True)
 
 DATA=pd.read_csv('DATA.csv', sep=';')
 DATA['Rendimiento']=DATA['Eficacia']*DATA['Usos']
