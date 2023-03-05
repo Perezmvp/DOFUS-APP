@@ -39,7 +39,7 @@ TODOS=pd.concat([ACARICIADORAS,APORREADORAS,DRAGONALGAS,ABREVADEROS,FULMINADORAS
 
 if OPCIONES == 'Todos':
     st.subheader('TODOS :earth_americas:')
-    st.write(TODOS.set_index())
+    st.write(TODOS.reset_index())
 if OPCIONES == 'Acariciadoras':
     st.subheader('ACARICIADORAS :smile:')
     st.write(ACARICIADORAS.reset_index())
