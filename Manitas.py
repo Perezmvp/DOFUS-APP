@@ -69,6 +69,8 @@ if OPCIONES == 'Fulminadoras':
     st.subheader('FULMINADORAS :zap:')
     st.write(FULMINADORAS.reset_index(drop=True))
 
+st.write(edited_df = st.experimental_data_editor(TODOS, num_rows="dynamic"))
+
 #st.subheader('Abrevaderos')
 #st.write(ABREVADEROS)
 #st.subheader('Aporreadoras :slightly_smiling_face:')
