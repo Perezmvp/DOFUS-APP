@@ -6,7 +6,8 @@ st.title('Rentabilidad de objetos de cria')
 NOMBRE_OPCIONES=['Todos','Acariciadoras','Aporreadoras','Dragonalgas','Abrevaderos','Fulminadoras']
 OPCIONES=st.radio('Filtrar por:',NOMBRE_OPCIONES)
 
-DATA=pd.read_csv('DATA.csv', index_col=False, sep=';')
+DATAINDEX=pd.read_csv('DATA.csv', sep=';')
+DATA=DATAINDEX.style.hide_index()
 DATA['Rendimiento']=DATA['Eficacia']*DATA['Usos']
 DATA['R/P']=DATA['Rendimiento']/DATA['Precio']
 
