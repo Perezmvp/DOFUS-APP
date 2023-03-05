@@ -37,6 +37,7 @@ FULMINADORAS['Rentabilidad']=FULMINADORAS['R/P']/FULMINADORASMEDIAN
 
 TODOS=pd.concat([ACARICIADORAS,APORREADORAS,DRAGONALGAS,ABREVADEROS,FULMINADORAS], ignore_index=True)
 
+st.write(DATA)
 if OPCIONES == 'Todos':
     st.subheader('TODOS :earth_americas:')
     st.write(TODOS)
