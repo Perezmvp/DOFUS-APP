@@ -72,6 +72,8 @@ with tab1:
 with st.form('Registro1'):
     del NOMBRE_OPCIONES[0]
     st.selectbox('Item', NOMBRE_OPCIONES)
+    st.text_input('Jefe')
+    st.number_input('Nivel', min_value=0, max_value=200, step=1)
 
 
 #st.subheader('Abrevaderos')
