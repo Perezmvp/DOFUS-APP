@@ -69,11 +69,12 @@ with tab1:
         st.subheader('FULMINADORAS :zap:')
         st.write(FULMINADORAS.reset_index(drop=True))
 
-with st.form('Registro1'):
-    del NOMBRE_OPCIONES[0]
-    st.selectbox('Item', NOMBRE_OPCIONES)
-    st.text_input('Jefe')
-    st.number_input('Nivel', min_value=0, max_value=200, step=1)
+with tab2:
+    with st.form('Registro1'):
+        del NOMBRE_OPCIONES[0]
+        st.selectbox('Item', NOMBRE_OPCIONES)
+        st.text_input('Jefe')
+        st.number_input('Nivel', min_value=0, max_value=200, step=1)
 
 
 #st.subheader('Abrevaderos')
