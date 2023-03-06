@@ -78,6 +78,7 @@ with tab2:
         st.number_input('Usos', min_value=0)
         st.number_input('Precio', min_value=0)
         st.number_input('Nivel', min_value=0, max_value=200, step=1)
+        st.form_submit_button('Guardar')
 
 
 #st.subheader('Abrevaderos')
