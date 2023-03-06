@@ -74,6 +74,9 @@ with tab2:
         del NOMBRE_OPCIONES[0]
         st.selectbox('Item', NOMBRE_OPCIONES)
         st.text_input('Jefe')
+        st.number_input('Eficacia', min_value=0)
+        st.number_input('Usos', min_value=0)
+        st.number_input('Precio', min_value=0)
         st.number_input('Nivel', min_value=0, max_value=200, step=1)
 
 
