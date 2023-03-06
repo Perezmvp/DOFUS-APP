@@ -3,55 +3,52 @@ import pandas as pd
 
 
 st.title('Rentabilidad de objetos de cria')
-
-
-DATA=pd.read_csv('DATA.csv', sep=';')
-DATA['Rendimiento']=DATA['Eficacia']*DATA['Usos']
-DATA['R/P']=DATA['Rendimiento']/DATA['Precio']
-
-ACARICIADORAS=DATA.query("Item=='Acariciador'")
-APORREADORAS=DATA.query("Item=='Aporreadora'")
-DRAGONALGAS=DATA.query("Item=='Dragonalgas'")
-ABREVADEROS=DATA.query("Item=='Abrevadero'")
-FULMINADORAS=DATA.query("Item=='Fulminadora'")
-
-ACARICIADORASRP=ACARICIADORAS['R/P']
-APORREADORASRP=APORREADORAS['R/P']
-DRAGONALGASRP=DRAGONALGAS['R/P']
-ABREVADEROSRP=ABREVADEROS['R/P']
-FULMINADORASRP=FULMINADORAS['R/P']
-
-ACARICIADORASMEDIAN=ACARICIADORASRP.median()
-APORREADORASMEDIAN=APORREADORASRP.median()
-DRAGONALGASMEDIAN=DRAGONALGASRP.median()
-ABREVADEROSMEDIAN=ABREVADEROSRP.median()
-FULMINADORASMEDIAN=FULMINADORASRP.median()
-
-ACARICIADORAS['Rentabilidad']=ACARICIADORAS['R/P']/ACARICIADORASMEDIAN
-APORREADORAS['Rentabilidad']=APORREADORAS['R/P']/APORREADORASMEDIAN
-DRAGONALGAS['Rentabilidad']=DRAGONALGAS['R/P']/DRAGONALGASMEDIAN
-ABREVADEROS['Rentabilidad']=ABREVADEROS['R/P']/ABREVADEROSMEDIAN
-FULMINADORAS['Rentabilidad']=FULMINADORAS['R/P']/FULMINADORASMEDIAN
-
-ACARICIADORAS=ACARICIADORAS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
-APORREADORAS=APORREADORAS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
-DRAGONALGAS=DRAGONALGAS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
-ABREVADEROS=ABREVADEROS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
-FULMINADORAS=FULMINADORAS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
-
-ACARICIADORAS=ACARICIADORAS.sort_values(by='Rentabilidad', ascending=False)
-APORREADORAS=APORREADORAS.sort_values(by='Rentabilidad', ascending=False)
-DRAGONALGAS=DRAGONALGAS.sort_values(by='Rentabilidad', ascending=False)
-ABREVADEROS=ABREVADEROS.sort_values(by='Rentabilidad', ascending=False)
-FULMINADORAS=FULMINADORAS.sort_values(by='Rentabilidad', ascending=False)
-
-TODOS=pd.concat([ACARICIADORAS,APORREADORAS,DRAGONALGAS,ABREVADEROS,FULMINADORAS], ignore_index=True)
-TODOS=TODOS.sort_values(by='Rentabilidad', ascending=False)
-
-
 with tab1:
     NOMBRE_OPCIONES=['Todos','Acariciadoras','Aporreadoras','Dragonalgas','Abrevaderos','Fulminadoras']
     OPCIONES=st.radio('Filtrar por:',NOMBRE_OPCIONES,horizontal=True)
+    DATA=pd.read_csv('DATA.csv', sep=';')
+    DATA['Rendimiento']=DATA['Eficacia']*DATA['Usos']
+    DATA['R/P']=DATA['Rendimiento']/DATA['Precio']
+
+    ACARICIADORAS=DATA.query("Item=='Acariciador'")
+    APORREADORAS=DATA.query("Item=='Aporreadora'")
+    DRAGONALGAS=DATA.query("Item=='Dragonalgas'")
+    ABREVADEROS=DATA.query("Item=='Abrevadero'")
+    FULMINADORAS=DATA.query("Item=='Fulminadora'")
+
+    ACARICIADORASRP=ACARICIADORAS['R/P']
+    APORREADORASRP=APORREADORAS['R/P']
+    DRAGONALGASRP=DRAGONALGAS['R/P']
+    ABREVADEROSRP=ABREVADEROS['R/P']
+    FULMINADORASRP=FULMINADORAS['R/P']
+
+    ACARICIADORASMEDIAN=ACARICIADORASRP.median()
+    APORREADORASMEDIAN=APORREADORASRP.median()
+    DRAGONALGASMEDIAN=DRAGONALGASRP.median()
+    ABREVADEROSMEDIAN=ABREVADEROSRP.median()
+    FULMINADORASMEDIAN=FULMINADORASRP.median()
+
+    ACARICIADORAS['Rentabilidad']=ACARICIADORAS['R/P']/ACARICIADORASMEDIAN
+    APORREADORAS['Rentabilidad']=APORREADORAS['R/P']/APORREADORASMEDIAN
+    DRAGONALGAS['Rentabilidad']=DRAGONALGAS['R/P']/DRAGONALGASMEDIAN
+    ABREVADEROS['Rentabilidad']=ABREVADEROS['R/P']/ABREVADEROSMEDIAN
+    FULMINADORAS['Rentabilidad']=FULMINADORAS['R/P']/FULMINADORASMEDIAN
+
+    ACARICIADORAS=ACARICIADORAS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
+    APORREADORAS=APORREADORAS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
+    DRAGONALGAS=DRAGONALGAS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
+    ABREVADEROS=ABREVADEROS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
+    FULMINADORAS=FULMINADORAS[['Item','Jefe','Precio','Nivel','Rentabilidad']]
+
+    ACARICIADORAS=ACARICIADORAS.sort_values(by='Rentabilidad', ascending=False)
+    APORREADORAS=APORREADORAS.sort_values(by='Rentabilidad', ascending=False)
+    DRAGONALGAS=DRAGONALGAS.sort_values(by='Rentabilidad', ascending=False)
+    ABREVADEROS=ABREVADEROS.sort_values(by='Rentabilidad', ascending=False)
+    FULMINADORAS=FULMINADORAS.sort_values(by='Rentabilidad', ascending=False)
+
+    TODOS=pd.concat([ACARICIADORAS,APORREADORAS,DRAGONALGAS,ABREVADEROS,FULMINADORAS], ignore_index=True)
+    TODOS=TODOS.sort_values(by='Rentabilidad', ascending=False)
+
     if OPCIONES == 'Todos':
         st.subheader('TODOS :earth_americas:')
         st.write(TODOS.reset_index(drop=True))
