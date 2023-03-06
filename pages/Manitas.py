@@ -70,7 +70,7 @@ with tab1:
         st.write(FULMINADORAS.reset_index(drop=True))
 
 with st.form('Registro1'):
-    del NOMBRE_OPCIONES[1]
+    del NOMBRE_OPCIONES[0]
     st.selectbox('Item', NOMBRE_OPCIONES)
 
 
