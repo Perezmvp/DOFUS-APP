@@ -3,8 +3,7 @@ import pandas as pd
 
 
 st.title('Rentabilidad de objetos de cria')
-NOMBRE_OPCIONES=['Todos','Acariciadoras','Aporreadoras','Dragonalgas','Abrevaderos','Fulminadoras']
-OPCIONES=st.radio('Filtrar por:',NOMBRE_OPCIONES,horizontal=True)
+
 
 DATA=pd.read_csv('DATA.csv', sep=';')
 DATA['Rendimiento']=DATA['Eficacia']*DATA['Usos']
@@ -49,8 +48,10 @@ FULMINADORAS=FULMINADORAS.sort_values(by='Rentabilidad', ascending=False)
 TODOS=pd.concat([ACARICIADORAS,APORREADORAS,DRAGONALGAS,ABREVADEROS,FULMINADORAS], ignore_index=True)
 TODOS=TODOS.sort_values(by='Rentabilidad', ascending=False)
 
-tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
+
 with tab1:
+    NOMBRE_OPCIONES=['Todos','Acariciadoras','Aporreadoras','Dragonalgas','Abrevaderos','Fulminadoras']
+    OPCIONES=st.radio('Filtrar por:',NOMBRE_OPCIONES,horizontal=True)
     if OPCIONES == 'Todos':
         st.subheader('TODOS :earth_americas:')
         st.write(TODOS.reset_index(drop=True))
