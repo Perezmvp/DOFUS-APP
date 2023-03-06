@@ -3,6 +3,7 @@ import pandas as pd
 
 
 st.title('Rentabilidad de objetos de cria')
+tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
 with tab1:
     NOMBRE_OPCIONES=['Todos','Acariciadoras','Aporreadoras','Dragonalgas','Abrevaderos','Fulminadoras']
     OPCIONES=st.radio('Filtrar por:',NOMBRE_OPCIONES,horizontal=True)
