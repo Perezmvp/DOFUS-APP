@@ -71,7 +71,8 @@ with tab1:
 
 with tab2:
     with st.form('Registro1'):
-        st.selectbox('Item', NOMBRE_OPCIONES)
+        NOMBRE_OPCIONES1=NOMBRE_OPCIONES.remove('Todos')
+        st.selectbox('Item', NOMBRE_OPCIONES1)
         st.text_input('Jefe')
         st.number_input('Eficacia', min_value=0)
         st.number_input('Usos', min_value=0)
