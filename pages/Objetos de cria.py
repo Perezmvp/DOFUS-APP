@@ -72,14 +72,22 @@ with tab1:
 with tab2:
     with st.form('Registro1'):
         NOMBRE_OPCIONES1=['Acariciadoras','Aporreadoras','Dragonalgas','Abrevaderos','Fulminadoras']
-        st.selectbox('Item', NOMBRE_OPCIONES1)
-        st.text_input('Jefe')
-        st.number_input('Eficacia', min_value=0)
-        st.number_input('Usos', min_value=0)
-        st.number_input('Precio', min_value=0)
-        st.number_input('Nivel', min_value=0, max_value=200, step=1)
-        st.form_submit_button('Guardar')
-
+        ITEM=st.selectbox('Item', NOMBRE_OPCIONES1)
+        JEFE=st.text_input('Jefe')
+        EFICACIA=st.number_input('Eficacia', min_value=0)
+        USOS=st.number_input('Usos', min_value=0)
+        PRECIO=st.number_input('Precio', min_value=0)
+        NIVEL=st.number_input('Nivel', min_value=0, max_value=200, step=1)
+        GUARDAR=st.form_submit_button('Guardar')
+    if GUARDAR:
+        FORMULARIO=pd.DataFrame({'Item':[ITEM],
+                                 'Jefe':[JEFE],
+                                 'Eficacia':[EFICACIA],
+                                 'Usos':[USOS],
+                                 'Precio':[PRECIO],
+                                 'Nivel':[NIVEL]})
+        FORMULARIO.to_csv('DATOS.csv')
+        
 
 #st.subheader('Abrevaderos')
 #st.write(ABREVADEROS)
