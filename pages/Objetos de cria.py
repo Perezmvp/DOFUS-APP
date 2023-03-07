@@ -93,7 +93,8 @@ with tab2:
                                  'Usos':[USOS],
                                  'Precio':[PRECIO],
                                  'Nivel':[NIVEL]})
-        FORMULARIO.to_csv('DATOS.csv')
+        pd.concat([DATA,FORMULARIO.to_frame().T], ignore_index=True)
+        Manitas.update([DATA.columns.values.tolist()] + DATA.values.tolist())
         
 
 #st.subheader('Abrevaderos')
