@@ -2,9 +2,7 @@ import streamlit as st
 import pandas as pd
 import gspread
 
-gc = gspread.service_account(filename='DOFUS TOOLS API KEY.json')
-Manitas = gc.open('DATA').worksheet('CRIA')
-DATA1 = pd.DataFrame(Manitas.get_all_records())
+
 
 st.write(DATA1)
 
@@ -15,8 +13,13 @@ tab1, tab2= st.tabs(["Busqueda", "Agregar entrada"])
 with tab1:
 
     NOMBRE_OPCIONES=['Todos','Acariciadoras','Aporreadoras','Dragonalgas','Abrevaderos','Fulminadoras']
+
+    gc = gspread.service_account(filename='DOFUS TOOLS API KEY.json')
+    Manitas = gc.open('DATA').worksheet('CRIA')
+    DATA = pd.DataFrame(Manitas.get_all_records())
     OPCIONES=st.radio('Filtrar por:',NOMBRE_OPCIONES,horizontal=True)
-    DATA=pd.read_csv('DATA.csv', sep=';')
+    
+    #DATA=pd.read_csv('DATA.csv', sep=';')
     DATA['Rendimiento']=DATA['Eficacia']*DATA['Usos']
     DATA['R/P']=DATA['Rendimiento']/DATA['Precio']
 
