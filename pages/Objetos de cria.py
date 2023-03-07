@@ -3,11 +3,6 @@ import pandas as pd
 import gspread
 
 
-
-st.write(DATA1)
-
-
-
 st.title('Rentabilidad de objetos de cria')
 tab1, tab2= st.tabs(["Busqueda", "Agregar entrada"])
 with tab1:
