@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "dofus-tools-service",
+  "private_key_id": "e538c4533fc8a8c20f147d38115b4b4a70f62988",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC36n9X9vJjem59\nVPwIP6iDp/obJo+W+LaiEf0/zeRAoVFeJArm3QPvkeQ93nqh3wQQrYPh7ZjPVO2U\nko5MCMv9I5E703YnGJfOvGB9fczUjJlvh/klRMLhtxVhx6nsW1i6dgAGgyPd1k7e\ny4xSoPb/pyZjGR3/GawRR25zFmyJfaCXB0yeyH0BFN2Vb8T97qcYl0sCaubyyxlh\nd7FSKU72bx/pj/497PA/ndq3mHeW0FK2oynmF1KAyflhbdos0RJYSdbu27iB6U8H\nwFxYUrL+8V6BfuBwct5+LCMbxKcZMIserZnkEgBetbdUoBDYawCKqJ7qJ63mWYKu\nu+7IALaxAgMBAAECggEAFnDkjO/dmknMGuWNwyvmp084c1ZR2v1fZjMvuuNSi0L5\nJ2Av0a+nf/SbQaQDQ/vEW+HwNQHFeDbyrlhGSKd3dzHUfNT2lm/9G1qyTghVlUcl\nSbibq/J8nQdhR9xnCCdf55CSZuOwMqyoVFhzN3nbPvfpn9nmu8PUJ7TsQzAPRPn8\nPys1KpIbiX3+z6Q2ORM8L3fmkCMuT2rmty8ux9NUQpt8IrzYPSIhvUaEaxOiqwbY\nymKdopvz7Ntu0t0rE3/N60ICU5j54lWt2GcwrQgVn7kU8qmpBjohaukUPURvFyJX\nuvrHFazZsuplTlEn4VgJSZd+7Jqr9K+IJJ736FbWiQKBgQDhvfiw5PWIJadJx4Sn\nwI7sEmGB4KrzhXJ6mHMZW+PMHAlWJZFPdWADpmyXsRrvu0UmUnhRSKmr1QDM3nU2\nrbw96ZbWFpCNKW9YJTvJVIa9CQTcWY8peUBRwnu2Gs9nAjmkmHNa3G06rGEtkp6M\nQFMF6UXWZG8KRKbahJzGOyJ+RwKBgQDQkVJsVPZsfj3TOUedotS1qorgSXRdHbNt\nWpi1s76KSEETuwrb9zFWj2jTT9IN2B+B+hKkttFCbAkrB4ymHxk5PYzmPmVUg/bq\n2F5WT3knPvof55Hybbzmw5daxDJMi8niJkcn/LJ5AAjEIJnqnYRrhXdtEVVsLwrh\nZkVt70ZHRwKBgAg39F/sVgwY4thKzUeWOR3bJXWnClJHX32bI0WfFNIPiz95qqqr\n6Uz4uCdlqUdlGAVnJz4+WP8KiDbtOnM9LAdNA9LTi3u4MHeTE3QnAajMNUMYd5/Y\n7ECNxhdBLp/fct3NNxXtxIRIVllkZyVQCjXC4moFyg0jprd58IM/D+htAoGAUQzo\nNukdijPU2sybpAqvFpnbtiVVbwonvAtE5PegyCQkBgLdyXVaWwUH+3Y9btvaAqyn\nqhLRZzqMpYgdhED5kGD27FK7FgjiX4kNwATKVBIJKXTYJpm2mwbPPpqX4V9BaPzv\nEf8FbDgzL+Rra90ipJYNPvlJdO0jEUypFnuxl+kCgYEAqRvT7JwWebeorAfQUhcu\n4jLKTmNDSnQ0KUbJwLCf5bYbGGLmc7w2kCss9xDh8fRcmxYW+Ziqt2OcvtO7lMOE\n/zsuP1cWOVXon0N1UFHkaZwOQxzgub+awl7TSjTFdWfXYKOkbei9PeNIsQCQICix\n0MP6Ot3qNFgM883ibVMwZKo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "google-sheets@dofus-tools-service.iam.gserviceaccount.com",
+  "client_id": "109398270510855013539",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/google-sheets%40dofus-tools-service.iam.gserviceaccount.com"
+}
