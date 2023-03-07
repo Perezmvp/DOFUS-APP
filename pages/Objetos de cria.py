@@ -93,7 +93,10 @@ with tab2:
                                  'Usos':[USOS],
                                  'Precio':[PRECIO],
                                  'Nivel':[NIVEL]})
-        DATA=pd.concat([DATA,FORMULARIO], ignore_index=True)
+        gc = gspread.service_account(filename='DOFUS TOOLS API KEY.json')
+        Manitas = gc.open('DATA').worksheet('CRIA')
+        DATA = pd.DataFrame(Manitas.get_all_records())
+        DATA = pd.concat([DATA,FORMULARIO], ignore_index=True)
         Manitas.update([DATA.columns.values.tolist()] + DATA.values.tolist())
         
 
