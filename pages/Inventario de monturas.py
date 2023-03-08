@@ -17,9 +17,11 @@ with tab1:
 
     DATAINVPEREZ = pd.DataFrame(edited_DATAINVPEREZ)
 
+    st.write(DATAINVPEREZ)
+
     if GUARDAR:
         INV_PEREZ.clear()
-        INV_PEREZ.update([edited_DATAINVPEREZ.columns.values.tolist()] + edited_DATAINVPEREZ.tolist())
+        INV_PEREZ.update([DATAINVPEREZ.columns.values.tolist()] + DATAINVPEREZ.tolist())
 
     
     
