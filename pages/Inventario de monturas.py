@@ -13,6 +13,9 @@ with tab1:
     
     edited_DATAINVPEREZ = st.experimental_data_editor(DATAINVPEREZ, num_rows='dynamic')
 
+    st.write(DATAINVPEREZ)
+    st.write(edited_DATAINVPEREZ)
+
     INV_PEREZ.update([edited_DATAINVPEREZ.columns.values.tolist()] + edited_DATAINVPEREZ.tolist())
 
 
