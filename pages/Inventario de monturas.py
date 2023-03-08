@@ -10,7 +10,11 @@ with tab1:
     gc = gspread.service_account(filename='DOFUS TOOLS API KEY.json')
     INV_PEREZ = gc.open('DATA').worksheet('INV_PÉREZ')
     DATAINVPEREZ = pd.DataFrame(INV_PEREZ.get_all_records())
-    st.write(DATAINVPEREZ)
+    
+    edited_DATAINVPEREZ = st.experimental_data_editor(DATAINVPEREZ, num_rows='dynamic')
+
+    st.write(edited_DATAINVPEREZ)
+
 
 
 
