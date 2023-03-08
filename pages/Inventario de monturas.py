@@ -12,10 +12,7 @@ with tab1:
     DATAINVPEREZ = pd.DataFrame(INV_PEREZ.get_all_records())
     
     edited_DATAINVPEREZ = st.experimental_data_editor(DATAINVPEREZ, num_rows='dynamic')
-
-    st.write(DATAINVPEREZ)
-    st.write(edited_DATAINVPEREZ)
-
+    INV_PEREZ.clear()
     INV_PEREZ.update([edited_DATAINVPEREZ.columns.values.tolist()] + edited_DATAINVPEREZ.tolist())
 
 
