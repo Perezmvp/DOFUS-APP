@@ -10,10 +10,19 @@ with tab1:
     gc = gspread.service_account(filename='DOFUS TOOLS API KEY.json')
     INV_PEREZ = gc.open('DATA').worksheet('INV_PÉREZ')
     DATAINVPEREZ = pd.DataFrame(INV_PEREZ.get_all_records())
-    
+
+    GUARDAR = st.button('Guardar')
+
     edited_DATAINVPEREZ = st.experimental_data_editor(DATAINVPEREZ, num_rows='dynamic')
-    INV_PEREZ.clear()
-    INV_PEREZ.update([edited_DATAINVPEREZ.columns.values.tolist()] + edited_DATAINVPEREZ.tolist())
+
+    DATAINVPEREZ = pd.DataFrame(edited_DATAINVPEREZ)
+
+    if GUARDAR:
+        INV_PEREZ.clear()
+        INV_PEREZ.update([edited_DATAINVPEREZ.columns.values.tolist()] + edited_DATAINVPEREZ.tolist())
+
+    
+    
 
 
 
